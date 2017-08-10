@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tct_organization_tct_organization,tct_organization.tct_organization,model_tct_organization_tct_organization,,1,1,1,1

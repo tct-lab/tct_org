@@ -1,0 +1,65 @@
+<odoo>
+  <data>
+
+
+
+        <record model="ir.ui.view" id="tct_department">
+      <field name="name">tct normal department</field>
+      <field name="model">tct_organization.tct_organization</field>
+      <field name="arch" type="xml">
+        <form>
+          <div style="width:70%;margin:10px auto;border:3px solid #e9e9e9;border-shadow:6px 6px 6px #333;padding:5px">
+            <group>
+              <field name="name"/>
+
+            </group>
+
+          </div>
+        </form>
+      </field>
+    </record>
+
+
+
+
+
+
+
+    <record  id="view_tree_tct_organization" model="ir.actions.act_window">
+      <field name="name">tct de</field>
+      <field name="res_model">tct_organization.tct_organization</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          点击这里创建
+        </p>
+      </field>
+    </record>
+
+
+
+
+    <record model="ir.actions.act_window" id="view_tree_tct_members">
+      <field name="name">tct members</field>
+      <field name="res_model">res.users</field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <menuitem name="tct orgnization" id="tct_organization.menu_root"/>
+
+    <menuitem name="tce department" id="menu_tct_department" parent="tct_organization.menu_root" action="view_tree_tct_organization"/>
+
+    <menuitem name="tce members" id="menu_tct_members" parent="tct_organization.menu_root" action="view_tree_tct_members"/>
+
+
+
+  </data>
+</odoo>
