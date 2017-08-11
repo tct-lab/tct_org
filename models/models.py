@@ -11,6 +11,20 @@ class tct_organization(models.Model):
 
     _sql_constraints = [('name_unique', 'UNIQUE(name)', 'name should be unique')]
 
+    @api.multi
+    def open_member_view(self):
+        self.ensure_one()
+        return {
+            'name': 'tct members',
+            'view_mode': 'tree,form',
+            'view_type': 'form',
+            'res_model': 'res.users',
+
+            'type': 'ir.actions.act_window',
+
+            'target': 'current',
+
+        }
 
 
 
