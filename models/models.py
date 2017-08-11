@@ -14,6 +14,7 @@ class tct_organization(models.Model):
     @api.multi
     def open_member_view(self):
         self.ensure_one()
+        print(self.description)
         return {
             'name': 'tct members',
             'view_mode': 'tree,form',
@@ -23,6 +24,8 @@ class tct_organization(models.Model):
             'type': 'ir.actions.act_window',
 
             'target': 'current',
+            'domain':[('x_department','=',self.name)]
+
 
         }
 
