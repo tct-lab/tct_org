@@ -9,6 +9,9 @@ class tct_organization(models.Model):
 
     description = fields.Text()
 
+    department_setting = fields.Char(string="部门设置")
+    position_setting = fields.Char(string="职位设置")
+
     _sql_constraints = [('name_unique', 'UNIQUE(name)', 'name should be unique')]
 
     @api.multi
@@ -30,9 +33,11 @@ class tct_organization(models.Model):
         }
 
 
-
-
 class tct_members(models.Model):
+    _inherit = 'res.users'
+
     _name = 'tct_members'
 
     name = fields.Char()
+
+    x_testMember = fields.Char(string="测试成员")
