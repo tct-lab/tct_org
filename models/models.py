@@ -51,8 +51,6 @@ class tct_organization(models.Model):
 
 
 
-
-
 class tct_members(models.Model):
     _inherit = 'res.users'
 

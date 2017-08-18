@@ -30,6 +30,19 @@
     </record>
 
 
+      <record id="view_tree_department" model="ir.ui.view">
+      <field name="name">department</field>
+      <field name="model">tct_organization.tct_organization</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="description"/>
+
+
+        </tree>
+      </field>
+    </record>
+
 
 
 
