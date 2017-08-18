@@ -33,6 +33,26 @@ class tct_organization(models.Model):
         }
 
 
+    @api.multi
+    def open_department_setting(self):
+        self.ensure_one()
+        print(self.description)
+        return {
+            'name': 'tct members',
+            'view_mode': 'tree,form',
+            'view_type': 'form',
+            'res_model': 'department_setting',
+
+            'type': 'ir.actions.act_window',
+
+            'target': 'current',
+
+        }
+
+
+
+
+
 class tct_members(models.Model):
     _inherit = 'res.users'
 
@@ -41,3 +61,13 @@ class tct_members(models.Model):
     name = fields.Char()
 
     x_testMember = fields.Char(string="测试成员")
+
+
+class department_setting(models.Model):
+
+
+    _name = 'department_setting'
+
+    name = fields.Char()
+
+    responsible_person = fields.Char(string="负责人")

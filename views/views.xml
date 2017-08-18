@@ -18,6 +18,8 @@
 
               <button name="open_member_view" type="object" string="成员列表" class="oe_highlight" />
 
+              <button name="open_department_setting" type="object" string="部门设置" class="oe_highlight" />
+
 
 
             </group>
